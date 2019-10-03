@@ -1,0 +1,113 @@
+
+ %layout-ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+%clear-fix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+// MARGINS AND PADDINGS//
+
+$base-padding: 1.5rem;
+$base-margin: 3rem;
+
+
+//COLORS//
+$color-text :  #2d354b;
+// $color-text:#f0f;
+// $color-primary: #536188;
+// $color-text: $color-primary;
+$color-primary: #394a84;
+$color-primary-bright: #4161AB;
+// $color-secondary: #dbbb04;
+$color-secondary: #de9316;
+
+// $color-quaternary:#BD5E3B;
+$color-white: #fff;
+$color-lightgrey:#f0f0f0;
+
+// FONTS//
+
+$h1: 2.5rem;
+$h2: 2.1rem;
+$h3: 1.7rem;
+$h4: 1.5rem;
+$h5: 1.3rem;
+$h6: 1.1rem;
+
+$font-size-base: 1rem;
+$font-family-base: 'Open Sans', sans-serif;
+$font-family-title: 'Roboto Condensed', sans-serif;
+
+
+// TRANSITION//
+$transition: 0.2s all ease-in;
+
+
+// BORDER//
+
+$border-debug: 1px solid #f0f;
+
+// MEDIA QUERIES//
+
+
+$breakpoints: (
+  mobileXL : 480px,
+  tablet: 800px,
+  tabletXL: 920px,
+  laptop : 1087px,
+  basewidth:1300px
+);
+
+@mixin mq($mq-breakpoint, $mq-breakpoints: $breakpoints) {
+    // If $mq-breakpoint is a key that exists in
+    // $mq-breakpoints, get and use the value
+    @if map-has-key($mq-breakpoints, $mq-breakpoint) {
+        $mq-breakpoint: map-get($mq-breakpoints, $mq-breakpoint);
+    }
+
+    @media screen and (min-width: #{$mq-breakpoint}) {
+        @content;
+    }
+}
+
+
+// EXTENDS
+
+%button {
+
+    background: $color-secondary;
+    color: $color-white;
+    // text-transform: uppercase;
+    font-family: $font-family-title;
+    border: 0;
+    transition: $transition;
+
+    &:hover {
+        background: $color-primary;
+    }
+}
+
+//Animations
+
+.fade-enter,
+.fade-leave-to { opacity: 0 }
+
+.fade-leave,
+.fade-enter-to { opacity: 1 }
+
+.fade-enter-active,
+.fade-leave-active { transition: opacity 100ms }

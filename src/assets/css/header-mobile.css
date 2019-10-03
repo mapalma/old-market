@@ -1,0 +1,180 @@
+
+  .logo {
+
+    width: 240px;
+    display:block;
+    margin:0;
+    padding: $base-padding 0;
+    position: relative;
+
+    img {
+      min-width: 100%;
+    }
+
+    @include mq(tablet) {
+      padding: $base-padding/2;
+      float: left;
+      width: 280px;
+    }
+  }
+
+  .header {
+
+    .inner {
+      // position: relative;
+      // z-index: 2;
+    }
+  }
+
+  nav {
+    
+    display: none;
+    position: absolute;
+    top:0;
+    bottom:0;
+    right: 100%;
+    left: 0;
+    z-index: 99;
+    transition: 0.3s ease-in all;
+    width: 100%;
+
+     ul {
+        margin: $base-padding * 2;
+        padding: 0;
+        list-style: none;
+        li {
+          a {
+            display: block;
+            padding: 0 0 $base-padding;
+            color: $color-white;
+            
+            &:hover {
+              color: $color-secondary;
+            }
+          }
+        }
+      }
+
+    .wrapper.mobile & {
+
+      right: 0;
+      display: block;
+    }
+
+    @include mq(tablet) {
+      display: block;
+      position: static;
+      text-align: right;
+      border-bottom: 1px solid rgba($color-white, 0.3);
+
+      ul {
+        margin: 0;
+        padding: 0;
+        height: 75px;
+      }
+
+      li {
+        display: inline-block;
+        line-height: 75px;
+
+        a {
+          text-transform: uppercase;
+          display: block;
+          margin: 0 $base-padding/2;
+          color: $color-white;
+          padding: 0 $base-padding/3;
+          font-size: 0.8rem;
+          letter-spacing: 1px;
+          position: relative;
+          font-family: $font-family-title;
+
+          &:before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 1px;
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            border-bottom: 2px solid $color-white;
+            transition: width 0.2s ease-in;
+          }
+
+          &:hover {
+            color: $color-white;
+
+            &:before {
+              width: 100%;
+            }
+          }
+        }
+
+        &.router-link-exact-active {
+          a {
+            color: $color-secondary;
+            &:before {
+              width: 100%;
+              border-color: $color-secondary;
+            }
+          }
+        }
+      }
+    }
+
+    @include mq(tablet) {
+      display: block;
+    }
+  }
+
+
+  /*wrapper styles */
+  
+  .wrapper {
+
+    .mobile-overview {
+      background:$color-primary-bright;
+      position: absolute;
+      height:100vh;
+      top:0;
+      bottom:0;
+      left: 0;
+      right:120%;
+      z-index:1;
+      transition: 0.3s ease-in all;
+    }
+
+    &.mobile {
+      height:100vh;
+      overflow:hidden;
+
+      .mobile-overview {
+        right:0;
+      }
+
+      .mobile-toggle {
+        
+        &:before{
+          content:'CLOSE';
+          display: block;
+        }
+      }
+    }
+
+    .mobile-toggle {
+      color: $color-secondary;
+      font-weight: bold;
+      position: absolute;
+      top: $base-padding;
+      right: $base-padding;
+      z-index: 999;
+  
+      &:before{
+        content:'MENU';
+        display: block;
+      }
+
+      @include mq(tablet) {
+        display: none;
+      }
+    }
+  }

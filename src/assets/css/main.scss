@@ -1,0 +1,143 @@
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  #app {
+    font-family: $font-family-base;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.7;
+    font-size: 1rem;
+    color: $color-text;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-title;
+    text-transform: uppercase;
+    margin-bottom: $base-padding;
+    line-height: 1.1;
+    margin: 0 0 $base-padding 0;
+    color: $color-primary;
+  }
+  
+  h1 {
+    font-size: 2.5rem
+  }
+  
+  h2 {
+    font-size: 1.8rem
+  }
+  
+  h3 {
+    font-size: 1.6rem
+  }
+  
+  h4 {
+    font-size: 1.4rem
+  }
+  
+  h5 {
+    font-size: 1.2rem
+  }
+  
+  h6 {
+    font-size: 1rem
+  }
+  
+  p {
+    margin: 0 0 1.5rem 0;
+  }
+
+  a {
+    text-decoration: none;
+    transition: color .2s ease-in;
+    color: $color-secondary;
+  
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  body {
+    margin: 0;
+  }
+
+  header {
+    background:url('assets/img/banner05.jpg') no-repeat top center $color-primary;
+    background-size: cover;
+    min-height:300px;
+    position: relative;
+
+    body:not(home) & {
+      min-height:300px;
+
+      .home-text-wrapper {
+        display: none
+      }
+    }
+
+    .home & {
+
+      .home-text-wrapper {
+        display: block;
+      }
+
+      @include mq(tablet){
+        min-height:40vh; 
+        position: relative;  
+        z-index:1;
+
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      z-index:0;
+      background: rgba($color-primary, 0.7);
+    }
+
+    @include mq(tablet) {
+        min-height: 30vh;
+    }
+  }
+
+  .inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 $base-padding
+  }
+
+  main {
+    padding: $base-padding*2 0;
+  }
+  
+  .text-intro {
+
+    text-align: left;
+    margin-bottom: $base-padding;
+
+    @include mq(tablet) {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin-bottom: $base-padding * 2;
+
+        h2, h1 {
+          font-size: 3.5rem;
+          line-height:1;
+          padding: $base-padding 0;
+          border-bottom: 1px solid $color-secondary;
+        }
+
+        p {
+          padding: $base-padding 0 $base-padding $base-padding * 2;
+          color: $color-primary;
+        }
+    }
+  }
