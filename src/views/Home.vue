@@ -49,7 +49,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 
 import appBeerListHome from "@/components/BeerListHome.vue";
 
@@ -69,7 +68,7 @@ export default {
 
 <style lang="scss">
 
-@import "../assets/css/base.scss";
+// @import "../assets/css/base.scss";
 
 .panel-events {
   padding: $base-padding;

@@ -99,7 +99,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/css/base.scss";
+// @import "../assets/css/base.scss";
 
 .product-list-container {
   max-width: 820px;

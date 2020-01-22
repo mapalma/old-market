@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/css/base.scss";
+// @import "../assets/css/base.scss";
 // @import "../assets/css/main.scss";
 
 .monthly-list-wrapper {

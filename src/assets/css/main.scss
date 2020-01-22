@@ -65,16 +65,25 @@
   }
 
   header {
-    background:url('assets/img/banner05.jpg') no-repeat top center $color-primary;
-    background-size: cover;
-    min-height:300px;
+    
     position: relative;
 
+    .inner {
+       min-height:200px;
+    }
+
     body:not(home) & {
-      min-height:300px;
+      min-height:200px;
 
       .home-text-wrapper {
         display: none
+      }
+
+      @include mq(laptop){
+        
+        .inner {
+          min-height:300px;
+        }
       }
     }
 

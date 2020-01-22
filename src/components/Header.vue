@@ -24,30 +24,6 @@
             </ul>
         </div>
     </nav>
-
-
-      <!-- <Slide right> -->
-      <!-- <nav id="nav">
-        <ul>
-          <router-link to="/" tag="li">
-            <a>Home</a>
-          </router-link>
-          <router-link to="/about" tag="li">
-            <a>About</a>
-          </router-link>
-          <router-link to="/shop" tag="li">
-            <a>Shop</a>
-          </router-link>
-          <router-link to="/events" tag="li">
-            <a>Events</a>
-          </router-link>
-          <router-link to="/checkout" tag="li">
-            <a>Checkout (<span v-text="checkoutQuantity">0</span>)
-            </a>
-          </router-link>
-        </ul>
-      </nav> -->
-      <!-- </Slide> -->
       <app-intro></app-intro>
     </div>
   </div>
@@ -93,7 +69,12 @@ export default {
 </script>
 
 <style lang="scss" >
-@import "../assets/css/base.scss";
+// @import "../assets/css/base.scss";
+
+.header {
+  background:url('../assets/img/banner05.jpg') no-repeat top center $color-primary;
+  background-size: cover;
+}
 
 .logo {
 
@@ -101,6 +82,10 @@ export default {
   display:block;
   margin: 0 auto;
   padding: $base-padding 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 31;
 
   img {
     min-width: 100%;
@@ -110,6 +95,8 @@ export default {
     padding: $base-padding/2;
     float: left;
     width: 280px;
+    position: static;
+    transform: none
   }
 }
 
@@ -210,6 +197,7 @@ nav {
   
     //override mobile
     &.navbar {
+      // background: rgba($color-primary, 0.8);
       .navbar-menu {
         background: transparent !important;
 
@@ -233,7 +221,6 @@ nav {
           position: absolute;
           left: 0;
           bottom: -1px;
-          border-bottom: 2px solid $color-white;
           transition: width 0.2s ease-in;
         }
 

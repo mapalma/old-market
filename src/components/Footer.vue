@@ -78,7 +78,7 @@
 <script>
 </script>
 <style lang="scss">
-@import "../assets/css/base.scss";
+// @import "../assets/css/base.scss";
 
 footer {
   background: $color-primary;
